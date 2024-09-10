@@ -7,7 +7,7 @@
             <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl">
               Привет👋
               <br />
-              Я <span :class="`text-[rgb(${tags_color})]`">v0vash</span>, пишу код.
+              Я <span :class="`text-[rgb(${theme.color})]`">v0vash</span>, пишу код.
             </h1>
             <p class="mt-5 text-base font-normal leading-7 text-gray-500">
               В этом spa можно увидеть интересные кейсы. Например ➡️
@@ -17,19 +17,19 @@
               кликни на цвет по душе
               <span
                 class="text-[rgb(255,0,0)] hover:underline cursor-pointer"
-                @click="tags_color = '255,0,0'"
+                @click="theme.color = '255,0,0'"
               >
                 красный</span
               >,
               <span
                 class="text-[rgb(0,0,255)] hover:underline cursor-pointer"
-                @click="tags_color = '0,0,255'"
+                @click="theme.color = '0,0,255'"
               >
                 синий</span
               >, я вот предпочитаю
               <span
                 class="text-[rgb(0,255,0)] hover:underline cursor-pointer"
-                @click="tags_color = '0,255,0'"
+                @click="theme.color = '0,255,0'"
               >
                 зеленый</span
               >
@@ -64,7 +64,7 @@
                       href="https://t.me/v0vash"
                       target="_blank"
                       class="hover:underline pl-2"
-                      :class="`text-[rgb(${tags_color})]`"
+                      :class="`text-[rgb(${theme.color})]`"
                       >https://t.me/v0vash</a
                     >
                     <br />}
@@ -76,7 +76,7 @@
         </div>
 
         <div class="self-end lg:col-span-8 h-full min-h-96">
-          <FlyingTags :tags_color="tags_color" />
+          <FlyingTags :tags_color="theme.color" />
         </div>
       </div>
     </div>
@@ -84,9 +84,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { Ref } from 'vue'
 import FlyingTags from '../FlyingTags.vue'
 
-const tags_color: Ref<string> = ref('0,255,0')
+import { useThemeStore } from '@/stores/theme'
+
+const theme = useThemeStore()
 </script>
