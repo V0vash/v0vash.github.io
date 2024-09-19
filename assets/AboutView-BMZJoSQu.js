@@ -1,1 +1,0 @@
-import{o as a,c,a as r}from"./index-CwwWbXdE.js";const _=(e,t)=>{const o=e.__vccOpts||e;for(const[s,n]of t)o[s]=n;return o},i={},l={class:"about"};function u(e,t){return a(),c("div",l,t[0]||(t[0]=[r("h1",null,"This is an about page",-1)]))}const d=_(i,[["render",u]]);export{d as default};
