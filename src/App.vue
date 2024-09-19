@@ -7,7 +7,5 @@ import { RouterLink, RouterView } from 'vue-router'
     <main class="flex-grow">
       <RouterView />
     </main>
-
-    <footer class="bg-gray-500 h-10"></footer>
   </body>
 </template>

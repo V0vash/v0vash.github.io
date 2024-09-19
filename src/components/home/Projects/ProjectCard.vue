@@ -22,13 +22,27 @@
             ⚡️ Стэк : {{ project.stack.join(' + ') }}
           </p>
         </div>
-        <div class="mt-5 sm:mt-auto">
-          <span
-            v-if="!project.project_link && !project.about_link"
-            class="font-bold tracking-widest text-gray-500"
-          >
+        <div v-if="!project.project_link && !project.about_link" class="mt-5 sm:mt-auto">
+          <span class="font-bold tracking-widest text-gray-500">
             Сейчас я рефакторю код, но скоро здесь будет ссылка
           </span>
+        </div>
+        <div
+          v-if="project.project_link || project.about_link"
+          class="flex justify-between mt-5 sm:mt-auto"
+        >
+          <router-link
+            v-if="project.project_link"
+            :to="project.project_link"
+            class="font-bold tracking-widest text-gray-500 underline"
+            >Смотреть</router-link
+          >
+          <router-link
+            v-if="project.about_link"
+            :to="project.about_link"
+            class="font-bold tracking-widest text-gray-500 underline"
+            >About</router-link
+          >
         </div>
       </div>
     </div>

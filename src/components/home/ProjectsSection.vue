@@ -30,7 +30,8 @@ const projects: ProjectInterface[] = [
     description:
       'Физарум многоглавый (лат. Physarum polycephalum) — вид миксомицетов семейства Физаровые. Является распространённым модельным организмом в генетике, физиологии и биохимии, а также одним из наиболее изученных организмов.',
     stack: ['p5.js', 'vue 3', 'tailwind'],
-    project_img: 'physarum-gif.gif'
+    project_img: 'physarum-gif.gif',
+    project_link: '/physarum'
   }
 ]
 </script>
